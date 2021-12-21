@@ -24,7 +24,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/beranda', 'App\Http\Controllers\MenuController@home');
 Route::get('/info_kegiatan', 'App\Http\Controllers\MenuController@info_kegiatan');
 Route::get('/siswa', 'App\Http\Controllers\MenuController@data_siswa');
-// Route::get('/profil_siswa', 'App\Http\Controllers\SiswaController@show');
-Route::resource('siswa', SiswaController::class);
+Route::resource('siswa', SiswaController::class)-> middleware('can:isAdmin');
+Route::resource('siswa', SiswaController::class)-> only('show')->middleware('can:isAdminSiswa');
 
 

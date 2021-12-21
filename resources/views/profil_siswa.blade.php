@@ -7,18 +7,20 @@
                 <h3>Profil Siswa</h3>
             </div>
             <div class="card-body">
-                <a href="{{ route('siswa.index) }}">Kembali</a>
+                @can('isAdmin')
+                <a href="{{ route('siswa.index') }}">Kembali</a>
+                @endcan
                 <div class="row ml-2">
-                    <h4 class="col-4">Nama</h4>
-                    <h4> : {{$siswa->nama}}</h4>
+                    <h5 class="col-6 col-sm-4">Nama</h5>
+                    <h5 class="col-6">: {{$siswa->nama}}</h5>
                 </div>
                 <div class="row ml-2">
-                    <h4 class="col-4">NISN</h4>
-                    <h4> : {{$siswa->nisn}}</h4>
+                    <h5 class="col-6 col-sm-4">NISN</h5>
+                    <h5 class="col-6">: {{$siswa->nisn}}</h5>
                 </div>
                 <div class="row ml-2">
-                    <h4 class="col-4">Tanggal Lahir</h4>
-                    <h4> : {{$siswa->tanggal_lahir}}</h4>
+                    <h5 class="col-6 col-sm-4">Tanggal Lahir</h5>
+                    <h5 class="col-6">: {{$siswa->tanggal_lahir}}</h5>
                 </div>
             </div>
         </div>
