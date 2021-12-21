@@ -20,23 +20,24 @@ class LoginController extends Controller
     |
     */
     public function redirectTo () {
-        if (Auth::user()->role == 'admin') {
+        if (auth::user()->role == 'admin') {
             return $this -> redirectTo = route ('siswa.index');
             // return $this -> redirectTo;
         } else {
-            return $this -> redirectTo = route ('siswa.show', Auth::user()-> siswa_id);
+            return $this -> redirectTo = route ('siswa.show', auth::user()-> siswa_id);
             // return $this -> redirectTo;
         }
     }
-
-    use AuthenticatesUsers;
+    
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
+    use AuthenticatesUsers;
+
     protected $redirectTo = RouteServiceProvider::HOME;
-    
+
     /**
      * Create a new controller instance.
      *

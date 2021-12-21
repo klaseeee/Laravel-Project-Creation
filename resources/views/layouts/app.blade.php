@@ -37,6 +37,9 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{url('/beranda')}}">Beranda</a></li>
                         <li><a class="nav-link" href="{{url('/siswa')}}">Data Siswa</a></li>
                         <li><a class="nav-link" href="{{url('/info_kegiatan')}}">Info Kegiatan</a></li>
+                        @can('isAdmin')
+                        <li><a class="nav-link" href="{{url('/users')}}">Manajemen Users</a></li>
+                        @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->
